@@ -15,10 +15,12 @@ fun todoTask6(): Nothing = TODO(
     references = { JavaCode6.Person("Alice", 29) }
 )
 
-class Person
-
-fun task6(): List<Person> {
-    todoTask6()
-    return listOf(/*Person("Alice", 29), Person("Bob", 31)*/)
+class Person(private val name: String, private val age: Int) {
+    override fun toString(): String {
+        return "Person(name=$name, age=$age)"
+    }
 }
 
+fun task6(): List<Person> {
+    return listOf(Person("Alice", 29), Person("Bob", 31))
+}
